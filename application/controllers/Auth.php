@@ -12,11 +12,16 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $this->session->set_flashdata('message', '');
-        $data['title'] = 'Sign In - Moofy';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/signin');
-        $this->load->view('templates/auth_footer');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            $this->session->set_flashdata('message', '');
+            $data['title'] = 'Sign In - Moofy';
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/signin');
+            $this->load->view('templates/auth_footer');
+        }
     }
 
     public function signin_user()
@@ -70,8 +75,8 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
+                'name' => htmlspecialchars($this->input->post('name', true)),
+                'email' => htmlspecialchars($this->input->post('email', true)),
                 'image' => 'default.jpg',
                 'password' => md5($this->input->post('password1')),
                 'role_id' => 2,
@@ -113,8 +118,8 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
+                'name' => htmlspecialchars($this->input->post('name', true)),
+                'email' => htmlspecialchars($this->input->post('email', true)),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 1,
