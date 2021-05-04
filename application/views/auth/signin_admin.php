@@ -1,4 +1,3 @@
-<?= $this->session->flashdata('message'); ?>
 <section class="sign-in-page">
     <div class="container">
         <div class="row justify-content-center align-items-center height-self-center">

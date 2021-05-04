@@ -12,16 +12,11 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required');
-
-        if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('message', '');
-            $data['title'] = 'Sign In - Moofy';
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/signin');
-            $this->load->view('templates/auth_footer');
-        }
+        $this->session->set_flashdata('message', '');
+        $data['title'] = 'Sign In - Moofy';
+        $this->load->view('templates/auth_header', $data);
+        $this->load->view('auth/signin');
+        $this->load->view('templates/auth_footer');
     }
 
     public function signin_user()
