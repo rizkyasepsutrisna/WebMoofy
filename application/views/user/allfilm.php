@@ -60,6 +60,7 @@
                      <ul class="d-flex align-items-center list-inline m-0">
                         <li class="nav-item nav-icon">
                            <a href="#" class="iq-user-dropdown search-toggle p-0 d-flex align-items-center" data-toggle="search-toggle">
+                              <h6> <?php echo ($_SESSION['nama']); ?></h6>
                               <img src="<?= base_url('assets_user/'); ?>images/user/user.png" class="img-fluid avatar-40 rounded-circle" alt="user">
                            </a>
                            <div class="iq-sub-dropdown iq-user-dropdown">

@@ -7,7 +7,7 @@ class login extends CI_Model
 	}
 	function get_user_detail($email, $pass)
 	{
-		$query = $this->db->query("select id from user where email='" . $email . "' and password='" . $pass . "'");
+		$query = $this->db->query("select id, name from user where email='" . $email . "' and password='" . $pass . "'");
 		return $query->result();
 	}
 }

@@ -32,7 +32,7 @@ class Auth extends CI_Controller
             $d = json_decode(json_encode($this->login->get_user_detail($email, md5($password))), true);
 
             $data_session = array(
-                'nama' => $email,
+                'nama' => $d[0]['name'],
                 'id' => $d[0]['id'],
                 'status' => "login"
             );
@@ -70,8 +70,8 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
-                'email' => htmlspecialchars($this->input->post('email', true)),
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
                 'image' => 'default.jpg',
                 'password' => md5($this->input->post('password1')),
                 'role_id' => 2,
@@ -113,8 +113,8 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
-                'email' => htmlspecialchars($this->input->post('email', true)),
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 1,
