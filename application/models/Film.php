@@ -12,16 +12,16 @@ class Film extends CI_Model
         $this->db->from('movies1');
         $this->db->order_by('id_movies', 'ASC');
 
-        return $this->db->get()->result();
+        return $this->db->get()->result_array();
     }
 
     public function GetMoveByID($id)
     {
-        $this->db->select('*');
-        $this->db->from('movies1');
-        $this->db->where('id_movies', $id);
+        //$this->db->select('*');
+        //$this->db->from('movies1');
+        //$this->db->where('id_movies', $id);
 
-        return $this->db->get()->row();
+        return $this->db->get_where('movies1',['id_movies' => $id])->row_array();
     }
 
     public function hapusFilm($id)
