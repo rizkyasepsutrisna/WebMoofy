@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 12, 2021 at 09:27 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Host: localhost
+-- Generation Time: Jun 22, 2021 at 11:03 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -91,9 +91,50 @@ INSERT INTO `history` (`id_history`, `id_user`, `genre`, `id_movie`) VALUES
 (50, 2, 'thriller', 75),
 (51, 2, 'mystery', 75),
 (52, 2, 'drama', 75),
-(53, 1, 'adventure', 21),
-(54, 1, 'action', 21),
-(55, 1, 'thriller', 21);
+(53, 2, 'thriller', 37),
+(54, 2, 'comedy', 37),
+(55, 2, 'criminal', 37),
+(56, 2, 'thriller', 23),
+(57, 2, 'criminal', 23),
+(58, 2, 'drama', 23),
+(59, 2, 'adventure', 71),
+(60, 2, 'action', 71),
+(61, 2, 'thriller', 71),
+(62, 2, 'adventure', 4),
+(63, 2, 'action', 4),
+(64, 2, 'comedy', 4),
+(65, 2, 'fantasy', 65),
+(66, 2, 'adventure', 100),
+(67, 2, 'action', 100),
+(68, 2, 'sci-fi', 100),
+(69, 2, 'horror', 91),
+(70, 2, 'sci-fi', 91),
+(71, 9, 'horror', 87),
+(72, 9, 'fantasy', 87),
+(73, 9, 'mystery', 87),
+(74, 9, 'adventure', 84),
+(75, 9, 'sci-fi', 84),
+(76, 9, 'drama', 84),
+(77, 2, 'adventure', 22),
+(78, 2, 'action', 22),
+(79, 2, 'sci-fi', 22),
+(80, 2, 'adventure', 24),
+(81, 2, 'action', 24),
+(82, 2, 'fantasy', 24),
+(83, 2, 'sci-fi', 24),
+(84, 10, 'thriller', 67),
+(85, 10, 'criminal', 67),
+(86, 10, 'mystery', 67),
+(87, 11, 'adventure', 4),
+(88, 11, 'action', 4),
+(89, 11, 'comedy', 4),
+(90, 11, 'adventure', 20),
+(91, 11, 'action', 20),
+(92, 11, 'comedy', 20),
+(93, 11, 'adventure', 28),
+(94, 11, 'action', 28),
+(95, 11, 'comedy', 28),
+(96, 11, 'horror', 11);
 
 -- --------------------------------------------------------
 
@@ -252,14 +293,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'faldi', 'faldi@gmail.com', 'default.jpg', '202cb962ac59075b964b07152d234b70', 2, 1, 1617874748),
-(2, 'Rizky Asep Sutrisna', 'asep@asep.com', 'default.jpg', '202cb962ac59075b964b07152d234b70', 2, 1, 1617960192),
-(3, 'Rizky Asep Sutrisna', 'asep@gmail.com', 'default.jpg', '$2y$10$iTwB1ASGHCY1nFk7RfY.8OLQ7Q8lxTEu/D3MHRYhNWG0MIT.BiT.m', 1, 1, 1617962423),
-(4, 'andi', 'andi@andi.com', 'default.jpg', '$2y$10$aPx5Q./9fG7wgrBejy0MIOFyavlVYNMRTSmr2Jg48vLJpjBRa1odq', 1, 1, 1618011118),
-(5, 'rafi', 'rafi@gmail.com', 'default.jpg', 'b2f0d9e408eccecc0edb74d654d36a72', 2, 1, 1618015132),
-(6, 'rafi', 'rafiadmin@gmail.com', 'default.jpg', '$2y$10$pXR1o5hAIxPmkR8RaVRcdOGYF8ok9tF507KqBgS17TIH/D.kNn/nC', 1, 1, 1618015212),
-(7, 'dadi', 'dadi@dadi.com', 'default.jpg', '$2y$10$N3lLWdRfJ0s/2ycfKz5OFeDTCiEJBRqz3TKwSMb47TXzdC1MkE.8O', 1, 1, 1618133922),
-(8, 'dadi', 'dadi@gmail.com', 'default.jpg', '202cb962ac59075b964b07152d234b70', 2, 1, 1618135241);
+(10, 'Rizky Asep Sutrisna', 'asep@yahoo.com', 'default.jpg', 'dc855efb0dc7476760afaa1b281665f1', 2, 1, 1623789498),
+(11, 'Rizky Asep Sutrisna', 'asep@asep.co.id', 'default.jpg', 'f3465a353436bbab3617815f64083c84', 2, 1, 1623825108);
 
 -- --------------------------------------------------------
 
@@ -302,13 +337,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id_history` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_history` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_role`
