@@ -19,7 +19,7 @@ class Auth_api extends REST_Controller
 
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
         if ($user) {
-            if ($user['role'] == 2) {
+            if ($user['role_id'] == 2) {
                 if (password_verify($pass, $user['password'])) {
                     $this->response([
                         'status' => TRUE,
