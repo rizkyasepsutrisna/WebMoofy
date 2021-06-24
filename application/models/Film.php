@@ -12,7 +12,7 @@ class Film extends CI_Model
         $this->db->from('movies1');
         $this->db->order_by('id_movies', 'ASC');
 
-        return $this->db->get()->result_array();
+        return $this->db->get()->result();
     }
 
     public function GetMoveByID($id)
